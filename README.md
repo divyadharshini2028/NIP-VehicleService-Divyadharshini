@@ -362,9 +362,7 @@ The completed application demonstrates how a manual vehicle servicing process ca
 
 ### 🏠 Application / Case Dashboard
 
-```text
-[ Add Screenshot Here ]
-```
+screenshots/US-001-Submit-Service-Request.png
 
 ### 📝 Vehicle Service Request
 
