@@ -2,7 +2,7 @@
 
 <p align="center">
 
-### A Pega-powered solution for streamlined, automated vehicle service management
+### A Pega-powered solution for streamlined and automated vehicle service management
 
 **Pega National Internship Program — Capstone Project**
 
@@ -25,35 +25,39 @@ The **Vehicle Service Management Application** is a workflow-driven application 
 
 The application is designed for **Urban Fleet Operations** to replace traditional service-request methods such as manual phone calls, emails, and unstructured communication with a centralized digital workflow.
 
-It enables customers and service teams to manage the complete vehicle servicing lifecycle — from **service request submission and vehicle inspection to estimate approval, service execution, and final resolution**.
+It manages the complete vehicle servicing lifecycle — from **service request submission and vehicle inspection to service estimation, approval, technician assignment, service completion, SLA management, vehicle-type routing, and final resolution**.
 
-### 🎯 Project Goal
+### 🎯 Project Objective
 
-> Build a structured and automated vehicle service management system that improves service request tracking, operational visibility, customer approval handling, and overall service efficiency.
-
----
-
-## ✨ Key Features
-
-* 🚘 **Vehicle Service Request Intake**
-* 🔍 **Vehicle Inspection Management**
-* 📝 **Inspection Notes & Required Services**
-* 💰 **Service Estimate Generation**
-* 👤 **Customer Approval Workflow**
-* 🗃️ **Customer & Vehicle Data Management**
-* 📚 **Service History Tracking**
-* 🔄 **Automated Case Routing**
-* ✅ **End-to-End Service Lifecycle Management**
-* 📊 **Case Status & Resolution Tracking**
+> To develop an automated vehicle service management solution that improves service request tracking, operational visibility, workflow efficiency, customer approval, technician assignment, and service completion.
 
 ---
 
-## 🏢 Application Details
+# ✨ Key Features
+
+* 🚘 Vehicle Service Request Management
+* 📝 Structured Service Request Intake
+* 🔍 Vehicle Inspection
+* 💰 Service Estimate Generation
+* ✅ Customer Estimate Approval
+* 👤 Customer Data Management
+* 🚗 Vehicle Data Management
+* 👨‍🔧 Automatic Technician Assignment
+* 🔄 Automated Case Routing
+* 🚙 Vehicle-Type-Based Routing
+* ⏱️ Service SLA Management
+* 🛠️ Service Completion Tracking
+* 📚 Service History Management
+* 📊 End-to-End Case Lifecycle Management
+
+---
+
+# 🏢 Application Details
 
 | Property                    | Details                                |
 | --------------------------- | -------------------------------------- |
 | **Program**                 | Pega National Internship Program       |
-| **Project**                 | Vehicle Service Management Application |
+| **Project Name**            | Vehicle Service Management Application |
 | **Platform**                | Pega Platform                          |
 | **Development Environment** | Pega App Studio                        |
 | **Target Organization**     | Urban Fleet Operations                 |
@@ -63,64 +67,132 @@ It enables customers and service teams to manage the complete vehicle servicing 
 
 ---
 
+# 🎯 Problem Statement
+
+Traditional vehicle service management often depends on phone calls, emails, spreadsheets, and manual coordination.
+
+This can lead to:
+
+* Lack of centralized service information
+* Difficulty tracking service requests
+* Delayed customer approvals
+* Manual technician assignment
+* Poor visibility into service progress
+* Difficulty monitoring service-level timelines
+* Inconsistent service records
+* Increased operational effort
+
+The proposed Pega application addresses these challenges through a **centralized case management and workflow automation solution**.
+
+---
+
+# 💡 Proposed Solution
+
+The application provides a structured workflow where every vehicle service request becomes a **Pega case**.
+
+The case progresses through predefined stages with appropriate data collection, routing, approval, assignment, SLA tracking, and resolution.
+
+```text
+Customer
+   │
+   ▼
+Service Request
+   │
+   ▼
+Vehicle Inspection
+   │
+   ▼
+Service Estimate
+   │
+   ▼
+Customer Approval
+   │
+   ▼
+Technician Assignment
+   │
+   ▼
+Vehicle-Type Routing
+   │
+   ▼
+Service Execution
+   │
+   ▼
+Service Completion
+   │
+   ▼
+Final Resolution
+```
+
+---
+
 # 🧩 User Stories Implemented
 
-The application was developed based on six major user stories covering the complete vehicle service lifecycle.
+The application implements **10 user stories** covering the major stages of vehicle service management.
 
-## US-001 — Submit Vehicle Service Request
+---
 
-Customers can initiate a vehicle service request by providing relevant information such as:
+## US-001 — Submit Service Request
+
+Customers can submit a vehicle service request by providing relevant information.
+
+### Information captured includes:
 
 * Customer details
 * Vehicle details
 * Reported vehicle issues
 * Preferred service date
-* Service-related requirements
+* Service requirements
 
-This creates a structured **Vehicle Service Request case** instead of relying on manual email or phone-based communication.
+This creates a structured **Vehicle Service Request case**.
 
----
+### 📸 Screenshot
 
-## US-002 — Perform Vehicle Inspection
-
-Service advisors can assess the vehicle and record inspection information.
-
-The inspection stage supports:
-
-* Vehicle inspection notes
-* Identifying service requirements
-* Recording recommended maintenance
-* Capturing issues discovered during inspection
-
-### Example Services
-
-* Brake pad replacement
-* Engine oil change
-* General vehicle maintenance
+![US-001 - Submit Service Request](screenshots/US-001-Submit-Service-Request.png)
 
 ---
 
-## US-003 — Generate Service Estimate
+## US-002 — Vehicle Inspection
 
-After inspection, the service team can prepare the estimated service information.
+Service advisors can inspect the vehicle and record the required inspection information.
 
-The application supports:
+### Features:
+
+* Inspection notes
+* Vehicle condition
+* Identified issues
+* Recommended services
+* Maintenance requirements
+
+### 📸 Screenshot
+
+![US-002 - Vehicle Inspection](screenshots/US-002-Vehicle-Inspection.png)
+
+---
+
+## US-003 — Service Estimate
+
+The application supports the creation of a service estimate based on the identified service requirements.
+
+### Features:
 
 * Service cost calculation
 * Estimated completion date
-* Service-related estimate information
+* Service details
+* Estimated service information
 
-This provides customers with structured information before service execution begins.
+### 📸 Screenshot
+
+![US-003 - Service Estimate](screenshots/US-003-Service-Estimate.png)
 
 ---
 
-## US-004 — Approve Service Estimate
+## US-004 — Approve Estimate
 
-A dedicated customer approval stage is incorporated into the workflow.
+Customers can review the generated service estimate before service execution.
 
-The customer reviews the generated service estimate before the service proceeds.
+The approval stage ensures that service activities proceed only after the required customer approval.
 
-### Approval Flow
+### Workflow
 
 ```text
 Service Estimate
@@ -128,171 +200,298 @@ Service Estimate
        ▼
 Customer Review
        │
-   ┌───┴────┐
-   │        │
-Approve   Decision
-   │
-   ▼
+       ▼
+Approval
+       │
+       ▼
 Service Execution
 ```
 
-During testing, an unnecessary **Decline branch and connector** caused a routing issue. The redundant branch was removed and the approval flow was corrected.
+### 📸 Screenshot
+
+![US-004 - Approve Estimate](screenshots/US-004-Approve-Estimate.png)
 
 ---
 
-## US-005 — Maintain Vehicle Data
+## US-005 — Vehicle Data
 
-The application maintains structured information related to:
+The application maintains structured vehicle-related information throughout the service lifecycle.
 
-### 👤 Customer
+### Vehicle information includes:
 
-* Customer profile
-* Contact information
-* Service-related information
-
-### 🚘 Vehicle
-
-* Vehicle information
+* Vehicle details
 * Vehicle model
-* Service requirements
+* Vehicle type
+* Service-related information
+* Historical service information
 
-### 📚 Service History
+### 📸 Screenshot
 
-Previous service information can be associated with the vehicle and customer throughout the case lifecycle.
-
-This provides a more organized approach to maintaining vehicle service information.
-
----
-
-## US-006 — Review & Resolution
-
-The final user story connects the different stages of the service lifecycle through automated case routing.
-
-The application moves the case through the required stages until service completion and resolution.
+![US-005 - Vehicle Data](screenshots/US-005-Vehicle-Data.png)
 
 ---
 
-# 🔄 End-to-End Workflow
+## US-006 — Review Service Estimate
 
-The complete application workflow is:
+The service estimate can be reviewed as part of the service management workflow before moving toward execution.
+
+This stage provides visibility into the estimated service requirements and associated information.
+
+### 📸 Screenshot
+
+![US-006 - Review Service Estimate](screenshots/US-006-Review-Service-Estimate.png)
+
+---
+
+## US-007 — Automatic Technician Assignment
+
+The application supports automated technician assignment to improve service workflow efficiency.
+
+Instead of relying completely on manual assignment, the workflow can automatically route the service case to the appropriate technician.
+
+### Benefits:
+
+* Reduced manual coordination
+* Faster case assignment
+* Improved workflow automation
+* Better technician allocation
+
+### 📸 Screenshot
+
+![US-007 - Auto Assign Technician](screenshots/US-007-Auto-Assign-Technician.png)
+
+---
+
+## US-008 — Service Completion
+
+Once the required service activities are completed, the service case progresses toward completion.
+
+The workflow provides a structured way to capture and manage the completion stage.
+
+### 📸 Screenshot
+
+![US-008 - Service Completion](screenshots/US-008-Service-Completion.png)
+
+---
+
+## US-009 — Service SLA
+
+The application incorporates **Service Level Agreement (SLA)** management to help monitor service timelines.
+
+SLA-based workflow management helps improve:
+
+* Timely service processing
+* Case monitoring
+* Operational accountability
+* Service efficiency
+
+### 📸 Screenshot
+
+![US-009 - Service SLA](screenshots/US-009-Service-SLA.png)
+
+---
+
+## US-010 — Route Vehicle Type
+
+The application supports routing based on vehicle type.
+
+This enables the service request to be directed according to the relevant vehicle category and operational requirements.
+
+### Benefits:
+
+* Appropriate service routing
+* Better workflow organization
+* Reduced manual decision-making
+* Improved operational efficiency
+
+### 📸 Screenshot
+
+![US-010 - Route Vehicle Type](screenshots/US-010-Route-Vehicle-Type.png)
+
+---
+
+# 🔄 Complete Case Lifecycle
+
+The complete workflow can be represented as:
 
 ```text
-┌─────────────────────────┐
-│   Request Intake        │
-│                         │
-│ Customer submits        │
-│ service request         │
-└────────────┬────────────┘
+┌──────────────────────────┐
+│  1. Submit Service       │
+│     Request              │
+└────────────┬─────────────┘
              │
              ▼
-┌─────────────────────────┐
-│   Service Assessment    │
-│                         │
-│ Vehicle inspection &   │
-│ service identification │
-└────────────┬────────────┘
+┌──────────────────────────┐
+│  2. Vehicle Inspection   │
+└────────────┬─────────────┘
              │
              ▼
-┌─────────────────────────┐
-│   Service Estimate      │
-│                         │
-│ Cost & completion       │
-│ estimate generated      │
-└────────────┬────────────┘
+┌──────────────────────────┐
+│  3. Generate Service     │
+│     Estimate             │
+└────────────┬─────────────┘
              │
              ▼
-┌─────────────────────────┐
-│   Customer Approval     │
-│                         │
-│ Estimate reviewed       │
-│ and approved            │
-└────────────┬────────────┘
+┌──────────────────────────┐
+│  4. Customer Approval    │
+└────────────┬─────────────┘
              │
              ▼
-┌─────────────────────────┐
-│   Service Execution     │
-│                         │
-│ Required service        │
-│ activities completed    │
-└────────────┬────────────┘
+┌──────────────────────────┐
+│  5. Review Estimate      │
+└────────────┬─────────────┘
              │
              ▼
-┌─────────────────────────┐
-│ Completion & Resolution │
-│                         │
-│ Case finalized          │
-└─────────────────────────┘
+┌──────────────────────────┐
+│  6. Assign Technician    │
+└────────────┬─────────────┘
+             │
+             ▼
+┌──────────────────────────┐
+│  7. Route by Vehicle     │
+│     Type                 │
+└────────────┬─────────────┘
+             │
+             ▼
+┌──────────────────────────┐
+│  8. Service Execution    │
+└────────────┬─────────────┘
+             │
+             ▼
+┌──────────────────────────┐
+│  9. SLA Monitoring       │
+└────────────┬─────────────┘
+             │
+             ▼
+┌──────────────────────────┐
+│ 10. Service Completion   │
+│     & Resolution         │
+└──────────────────────────┘
 ```
-
-### 🔁 Case Lifecycle
-
-**Request Intake → Service Assessment → Customer Approval → Service Execution → Completion & Resolution**
 
 ---
 
 # 🏗️ Application Architecture
 
-The application follows a case-based workflow architecture using Pega Platform.
+The application follows a **case-based workflow architecture** using Pega Platform.
 
 ```text
-                    ┌─────────────────────┐
-                    │       Customer      │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │ Vehicle Service     │
-                    │ Request Case        │
-                    └──────────┬──────────┘
-                               │
-              ┌────────────────┼────────────────┐
-              │                │                │
-              ▼                ▼                ▼
-        Request Intake   Service Assessment   Estimate
-              │                │                │
-              └────────────────┼────────────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │ Customer Approval   │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │ Service Execution   │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │ Completion &        │
-                    │ Resolution          │
-                    └─────────────────────┘
+                    ┌───────────────────┐
+                    │     Customer      │
+                    └─────────┬─────────┘
+                              │
+                              ▼
+                  ┌───────────────────────┐
+                  │ Vehicle Service       │
+                  │ Request Case          │
+                  └───────────┬───────────┘
+                              │
+             ┌────────────────┼─────────────────┐
+             │                │                 │
+             ▼                ▼                 ▼
+       Request Intake   Vehicle Inspection   Estimate
+             │                │                 │
+             └────────────────┼─────────────────┘
+                              │
+                              ▼
+                    Customer Approval
+                              │
+                              ▼
+                     Estimate Review
+                              │
+                              ▼
+                  Technician Assignment
+                              │
+                              ▼
+                    Vehicle-Type Routing
+                              │
+                              ▼
+                    Service Execution
+                              │
+                              ▼
+                    SLA / Monitoring
+                              │
+                              ▼
+                    Service Completion
+                              │
+                              ▼
+                         Resolution
 ```
 
 ---
 
 # 🛠️ Technology Stack
 
-| Technology               | Purpose                                       |
-| ------------------------ | --------------------------------------------- |
-| **Pega Platform**        | Application development & workflow automation |
-| **Pega App Studio**      | Low-code application development              |
-| **Pega Case Management** | Service request lifecycle                     |
-| **Pega Workflow**        | Automated routing between stages              |
-| **Pega Data Model**      | Customer, vehicle & service information       |
-| **GitHub**               | Project repository & version management       |
+| Technology               | Purpose                              |
+| ------------------------ | ------------------------------------ |
+| **Pega Platform**        | Workflow and application development |
+| **Pega App Studio**      | Low-code application development     |
+| **Pega Case Management** | Vehicle service case lifecycle       |
+| **Pega Workflow**        | Automated process routing            |
+| **Pega Data Model**      | Customer and vehicle information     |
+| **Pega SLA**             | Service timeline management          |
+| **GitHub**               | Repository and project documentation |
 
 ---
 
-# 🔍 Testing & Debugging
+# 🗂️ Data Management
 
-Testing was performed to validate the complete service request lifecycle.
+The application manages structured information related to:
 
-## 🧪 End-to-End Test Case
+### 👤 Customer Data
+
+* Customer profile
+* Contact information
+* Service request information
+
+### 🚗 Vehicle Data
+
+* Vehicle information
+* Vehicle model
+* Vehicle type
+* Service requirements
+
+### 🔧 Service Data
+
+* Inspection details
+* Required services
+* Service estimate
+* Completion information
+
+### 📚 Service History
+
+Service-related information can be maintained across the case lifecycle for better historical visibility.
+
+---
+
+# 🔐 Workflow & Automation
+
+The application uses Pega's workflow capabilities to automate important business processes.
+
+### Automated capabilities include:
+
+* Case routing
+* Customer approval
+* Technician assignment
+* Vehicle-type routing
+* SLA management
+* Case progression
+* Service completion
+* Resolution handling
+
+This reduces dependency on manual coordination and creates a consistent service process.
+
+---
+
+# 🧪 Testing & Validation
+
+The application was tested to validate the complete vehicle service lifecycle.
+
+## ✅ End-to-End Test Case
 
 **Test Case:** `V-1013`
 
-The test verified that a vehicle service request successfully moved through the complete workflow:
+The test verified successful case progression through the major workflow stages.
 
 ```text
 Request Intake
@@ -306,9 +505,9 @@ Service Execution
 Completion & Resolution
 ```
 
-### ✅ Final Result
+### Final Result
 
-The test case successfully completed the complete lifecycle and reached:
+The test case successfully completed the lifecycle and reached:
 
 ```text
 RESOLVED-UNSPECIFIED
@@ -318,151 +517,205 @@ RESOLVED-UNSPECIFIED
 
 # 🐛 Issue Identified & Resolved
 
-During testing, a routing issue was identified in the customer approval stage.
+During testing, a routing issue was identified in the customer approval workflow.
 
-### Problem
+### 🔴 Problem
 
 An unnecessary **Decline branch and connector** was present in the approval flow, resulting in incorrect routing behavior.
 
-### Resolution
+### 🛠️ Resolution
 
-The redundant branch and connector were removed and the workflow was retested.
+The redundant **Decline branch and connector** were removed from the workflow.
 
-### Result
+The application was then retested to confirm that the case progressed correctly.
 
-✅ Approval routing worked correctly
-✅ Case progressed to the next stage
-✅ End-to-end lifecycle completed successfully
+### 🟢 Result
 
-This debugging process helped validate the reliability of the configured workflow.
-
----
-
-# 📊 Project Outcomes
-
-The completed application demonstrates how a manual vehicle servicing process can be transformed into a structured digital workflow.
-
-### Key Outcomes
-
-* ✅ Centralized service request management
-* ✅ Structured vehicle and customer information
-* ✅ Automated case progression
-* ✅ Standardized inspection process
-* ✅ Transparent service estimates
-* ✅ Customer approval before service execution
-* ✅ Improved service history organization
-* ✅ End-to-end case tracking
-* ✅ Successful workflow testing and debugging
+* ✅ Approval routing corrected
+* ✅ Case progressed successfully
+* ✅ Workflow completed successfully
+* ✅ End-to-end lifecycle validated
 
 ---
 
 # 📸 Application Screenshots
 
-> Add screenshots of your Pega application here to make the repository more visually attractive.
-
-### 🏠 Application / Case Dashboard
-
-screenshots/US-001-Submit-Service-Request.png
-
-### 📝 Vehicle Service Request
-
-```text
-screenshots/US-001-Submit-Service-Request.png
-```
-
-### 🔍 Vehicle Inspection
-
-```text
-[ Add Screenshot Here ]
-```
-
-### 💰 Service Estimate
-
-```text
-[ Add Screenshot Here ]
-```
-
-### ✅ Customer Approval
-
-```text
-[ Add Screenshot Here ]
-```
-
-### 🎯 Case Resolution
-
-```text
-[ Add Screenshot Here ]
-```
+The following screenshots demonstrate the implemented user stories and major application workflows.
 
 ---
 
-# 📁 Project Structure
+### 📝 US-001 — Submit Service Request
+
+<p align="center">
+  <img src="screenshots/US-001-Submit-Service-Request.png" width="900">
+</p>
+
+---
+
+### 🔍 US-002 — Vehicle Inspection
+
+<p align="center">
+  <img src="screenshots/US-002-Vehicle-Inspection.png" width="900">
+</p>
+
+---
+
+### 💰 US-003 — Service Estimate
+
+<p align="center">
+  <img src="screenshots/US-003-Service-Estimate.png" width="900">
+</p>
+
+---
+
+### ✅ US-004 — Approve Estimate
+
+<p align="center">
+  <img src="screenshots/US-004-Approve-Estimate.png" width="900">
+</p>
+
+---
+
+### 🚗 US-005 — Vehicle Data
+
+<p align="center">
+  <img src="screenshots/US-005-Vehicle-Data.png" width="900">
+</p>
+
+---
+
+### 🔎 US-006 — Review Service Estimate
+
+<p align="center">
+  <img src="screenshots/US-006-Review-Service-Estimate.png" width="900">
+</p>
+
+---
+
+### 👨‍🔧 US-007 — Auto Assign Technician
+
+<p align="center">
+  <img src="screenshots/US-007-Auto-Assign-Technician.png" width="900">
+</p>
+
+---
+
+### 🛠️ US-008 — Service Completion
+
+<p align="center">
+  <img src="screenshots/US-008-Service-Completion.png" width="900">
+</p>
+
+---
+
+### ⏱️ US-009 — Service SLA
+
+<p align="center">
+  <img src="screenshots/US-009-Service-SLA.png" width="900">
+</p>
+
+---
+
+### 🚙 US-010 — Route Vehicle Type
+
+<p align="center">
+  <img src="screenshots/US-010-Route-Vehicle-Type.png" width="900">
+</p>
+
+---
+
+# 📊 Project Outcomes
+
+The completed application demonstrates how a traditional vehicle servicing process can be transformed into a centralized digital workflow.
+
+### Key Outcomes
+
+| Area                  | Outcome                         |
+| --------------------- | ------------------------------- |
+| Service Requests      | Centralized digital intake      |
+| Inspection            | Structured inspection workflow  |
+| Estimates             | Standardized service estimation |
+| Approval              | Customer approval workflow      |
+| Technician Assignment | Automated assignment            |
+| Routing               | Vehicle-type-based routing      |
+| SLA                   | Service timeline monitoring     |
+| Completion            | Structured completion process   |
+| Tracking              | End-to-end case visibility      |
+
+---
+
+# 🚀 Future Enhancements
+
+The application can be further enhanced with:
+
+* 📱 Customer self-service portal
+* 🔔 Automated email and SMS notifications
+* 💳 Online payment integration
+* 📅 Appointment scheduling
+* 📊 Fleet maintenance dashboards
+* 📈 Advanced service analytics
+* 🤖 AI-based maintenance recommendations
+* 🔧 Predictive vehicle maintenance
+* 📍 Service center tracking
+* ⭐ Customer feedback and service ratings
+* 📱 Mobile-friendly service management
+
+---
+
+# 🎓 Learning Outcomes
+
+Through this capstone project, practical experience was gained in:
+
+* Pega Platform
+* Pega App Studio
+* Low-code application development
+* Case lifecycle management
+* Workflow configuration
+* Data modeling
+* Approval routing
+* Automated assignment
+* SLA configuration
+* Conditional routing
+* Application testing
+* Workflow debugging
+* End-to-end business process automation
+
+---
+
+# 📁 Repository Structure
 
 ```text
 NIP-VehicleService-Divyadharshini/
 │
 ├── README.md
 │
-├── Application/
-│   ├── Case Types
-│   ├── Data Models
-│   ├── Workflows
-│   └── UI Configuration
-│
-├── Documentation/
-│   ├── Project Details
-│   ├── User Stories
-│   └── Testing
-│
-└── Screenshots/
-    ├── Request-Intake.png
-    ├── Inspection.png
-    ├── Estimate.png
-    ├── Approval.png
-    └── Resolution.png
+└── screenshots/
+    │
+    ├── US-001-Submit-Service-Request.png
+    ├── US-002-Vehicle-Inspection.png
+    ├── US-003-Service-Estimate.png
+    ├── US-004-Approve-Estimate.png
+    ├── US-005-Vehicle-Data.png
+    ├── US-006-Review-Service-Estimate.png
+    ├── US-007-Auto-Assign-Technician.png
+    ├── US-008-Service-Completion.png
+    ├── US-009-Service-SLA.png
+    └── US-010-Route-Vehicle-Type.png
 ```
-
----
-
-# 🚀 Future Enhancements
-
-The application can be further enhanced with additional capabilities such as:
-
-* 📱 Customer self-service portal
-* 🔔 Automated SMS/email notifications
-* 💳 Online service payment integration
-* 📅 Service appointment scheduling
-* 📊 Fleet maintenance dashboards
-* 📈 Service analytics and reporting
-* 🤖 AI-based maintenance recommendations
-* 🔧 Predictive vehicle maintenance
-* 📍 Service center tracking
-* ⭐ Customer feedback and service ratings
-
----
-
-# 🎓 Internship Learning Outcomes
-
-This capstone project provided practical exposure to:
-
-* Pega Platform application development
-* Low-code application design
-* Case lifecycle management
-* Workflow configuration
-* Data modeling
-* Approval routing
-* Case status management
-* Application testing
-* Debugging workflow issues
-* End-to-end business process automation
 
 ---
 
 # 🔗 Project Repository
 
-The source/project repository is available on GitHub:
+<p align="center">
 
-**Repository:**
+<a href="https://github.com/divyadharshini2028/NIP-VehicleService-Divyadharshini">
+  <img src="https://img.shields.io/badge/GitHub-View%20Repository-181717?style=for-the-badge&logo=github">
+</a>
+
+</p>
+
+**GitHub Repository:**
 https://github.com/divyadharshini2028/NIP-VehicleService-Divyadharshini
 
 ---
@@ -485,7 +738,7 @@ https://github.com/divyadharshini2028/NIP-VehicleService-Divyadharshini
 
 **Divyadharshini**
 
-🎓 **B.Tech – Artificial Intelligence and Data Science**
+**B.Tech – Artificial Intelligence and Data Science**
 
 🎓 **Bannari Amman Institute of Technology**
 
