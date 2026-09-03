@@ -485,18 +485,30 @@ https://github.com/divyadharshini2028/NIP-VehicleService-Divyadharshini
 
 ## 👩‍💻 Developer
 
-**Divya Dharshini S**
+**Divyadharshini**
 
-B.Tech — Artificial Intelligence and Data Science
+🎓 **B.Tech – Artificial Intelligence and Data Science**
 
-Bannari Amman Institute of Technology
+🎓 **Bannari Amman Institute of Technology**
+
+### 💻 Passionate About
+
+* 🤖 Artificial Intelligence
+* 📊 Data Science
+* ⚡ Low-Code Development
+* 🔄 Workflow Automation
+* 🧠 Intelligent Applications
 
 ---
 
-<p align="center">
+<div align="center">
 
-### 🚗 From Manual Service Requests to Automated Service Management
+## ⭐ Thank You for Visiting This Project!
 
-**Built with Pega Platform • Designed for Operational Efficiency • Tested End-to-End**
+### 🚗 Transforming Vehicle Service Management Through Intelligent Workflow Automation
 
-</p>
+**Built with ❤️ using Pega Platform**
+
+⭐ **If you found this project interesting, consider giving the repository a star!** ⭐
+
+</div>
