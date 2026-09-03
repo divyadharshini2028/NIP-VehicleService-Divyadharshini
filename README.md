@@ -369,7 +369,7 @@ The completed application demonstrates how a manual vehicle servicing process ca
 ### 📝 Vehicle Service Request
 
 ```text
-[ Add Screenshot Here ]
+screenshots/US-001-Submit-Service-Request.png
 ```
 
 ### 🔍 Vehicle Inspection
